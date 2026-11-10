@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">⇄</div>
+      <div>
+        <h1>Lexiure</h1>
+        <p class="sub">Devices ⇄ Computer</p>
+      </div>
+    </div>
+    <span id="conn" class="pill">Connecting</span>
+  </header>
+
+  <section class="card pair">
+    <p class="label">Pairing code</p>
+    <div class="code-row">
+      <span id="code" class="code">------</span>
+      <button id="copy" class="ghost" title="Copy code">Copy</button>
+    </div>
+    <a id="phoneLink" href="#" target="_blank" rel="noopener">Open on phone →</a>
+  </section>
+
+  <section class="card">
+    <div id="drop" class="drop">
+      <div class="drop-icon">↑</div>
+      <strong>Send to phone</strong>
+      <span>Drop files here or click to browse</span>
+      <input id="file" type="file" multiple hidden>
+    </div>
+    <div id="progress" class="progress hidden">
+      <div class="bar">
+        <div id="bar"></div>
+      </div>
+      <span id="progressText"></span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="list-head">
+      <strong>From phone</strong>
+      <span id="count" class="count">0</span>
+    </div>
+    <ul id="list" class="list"></ul>
+    <p id="empty" class="empty">Files you send from your phone will appear here.</p>
+  </section>
+
+  <section class="card settings" style="display: none;">
+    <p class="label">Server URL</p>
+    <div class="code-row">
+      <input type="text" id="server" placeholder="https://lexiure.onrender.com" />
+      <button id="saveServer" class="ghost">Save</button>
+    </div>
+  </section>
+
+  <footer>
+    <div id="qr"></div>
+    <section class="card">
+      <div class="list-head">
+        <strong>Internet speed</strong>
+        <button id="speedBtn" class="ghost">Run test</button>
+      </div>
+      <div class="speed-grid">
+        <div class="speed-stat">
+          <span class="speed-label">Ping</span>
+          <span id="speedPing" class="speed-value">--</span>
+        </div>
+        <div class="speed-stat">
+          <span class="speed-label">Download</span>
+          <span id="speedDown" class="speed-value">--</span>
+        </div>
+        <div class="speed-stat">
+          <span class="speed-label">Upload</span>
+          <span id="speedUp" class="speed-value">--</span>
+        </div>
+      </div>
+      <p id="speedStatus" class="speed-status">Tap "Run test" to check your speed.</p>
+    </section>
+    <section class="card">
+      <div class="list-head">
+        <strong>Screen time today</strong>
+        <span class="sub">Per website</span>
+      </div>
+      <ul id="siteList" class="list"></ul>
+      <p id="siteEmpty" class="empty">Browse a website to start tracking.</p>
+    </section>
+  </footer>
+
+  <script src="qrcode.js"></script>
+  <script src="popup.js"></script>
+  <script src="speed.js"></script>
+</body>
+
+</html>
